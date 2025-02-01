@@ -1,0 +1,16 @@
+{
+    "i18n-ally.dirStructure": "auto",
+    "i18n-ally.localesPaths": ["lang"],
+    "i18n-ally.enabledFrameworks": ["laravel"],
+    "i18n-ally.enabledParsers": ["php"],
+    "i18n-ally.keystyle": "nested",
+    "i18n-ally.sourceLanguage": "nl",
+    "i18n-ally.extract.autoDetect": true,
+    "i18n-ally.displayLanguage": "nl",
+    "i18n-ally.readonly": false,
+    "i18n-ally.annotationInPlace": false,
+    "i18n-ally.disabled": false,
+    "i18n-ally.extract.keygenStyle": "kebab-case",
+    "i18n-ally.fullReloadOnChanged": false,
+    "i18n-ally.keepFulfilled": false
+}
