@@ -2,9 +2,9 @@
 
 namespace CodeSmiths\LunarFilamentRepeaterField\Tests;
 
+use CodeSmiths\LunarFilamentRepeaterField\LunarFilamentRepeaterFieldServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use CodeSmiths\LunarFilamentRepeaterField\LunarFilamentRepeaterFieldServiceProvider;
 
 class TestCase extends Orchestra
 {
