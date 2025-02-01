@@ -1,19 +1,13 @@
-#  
+#
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/cdsmths/lunar-filament-repeater-field.svg?style=flat-square)](https://packagist.org/packages/cdsmths/lunar-filament-repeater-field)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/cdsmths/lunar-filament-repeater-field/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/cdsmths/lunar-filament-repeater-field/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/cdsmths/lunar-filament-repeater-field/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/cdsmths/lunar-filament-repeater-field/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/cdsmths/lunar-filament-repeater-field.svg?style=flat-square)](https://packagist.org/packages/cdsmths/lunar-filament-repeater-field)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+This is a Laravel package that provides a repeater field for the Filament admin panel. This a field that allows you to add multiple instances of a group of fields. This is useful for creating a list of items that have the same fields.
 
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/lunar-filament-repeater-field.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/lunar-filament-repeater-field)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+> **Note:** This package is still in development and is not yet ready for production use.
 
 ## Installation
 
@@ -23,38 +17,15 @@ You can install the package via composer:
 composer require cdsmths/lunar-filament-repeater-field
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="lunar-filament-repeater-field-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="lunar-filament-repeater-field-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="lunar-filament-repeater-field-views"
-```
-
 ## Usage
 
+Register the field in your AppServiceProvider like so in the register method:
+
 ```php
-$lunarFilamentRepeaterField = new CodeSmiths\LunarFilamentRepeaterField();
-echo $lunarFilamentRepeaterField->echoPhrase('Hello, CodeSmiths!');
+AttributeData::registerFieldType(RepeaterField::class, RepeaterFieldType::class);
 ```
+
+Then you can add the field under Settings > Attribute Groups > Fields in your Lunar admin panel. Don't forget to add the the field to your producttype otherwise it won't show up on the product edit page.
 
 ## Testing
 
@@ -76,8 +47,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Thomas van der Westen](https://github.com/tdwesten)
-- [All Contributors](../../contributors)
+-   [Thomas van der Westen](https://github.com/tdwesten)
+-   [All Contributors](../../contributors)
 
 ## License
 
