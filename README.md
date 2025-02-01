@@ -7,7 +7,8 @@
 
 This is a Laravel package that provides a repeater field for the Filament admin panel. This a field that allows you to add multiple instances of a group of fields. This is useful for creating a list of items that have the same fields.
 
-> **Note:** This package is still in development and is not yet ready for production use.
+> [!WARNING]
+> This package is still in development and is not yet ready for production use.
 
 ## Installation
 
