@@ -1,6 +1,6 @@
 <?php
 
-namespace CodeSmiths\LunarFilamentRepeaterField\CustomAttributeData;
+namespace CodeSmiths\LunarFilamentRepeaterField;
 
 use CodeSmiths\LunarFilamentRepeaterField\Fields\RepeaterField;
 use Filament\Forms\Components\Component;

@@ -23,6 +23,8 @@ composer require cdsmths/lunar-filament-repeater-field
 Register the field in your AppServiceProvider and for now override the AttributeData class to support the new repeater field.
 
 ```php
+use CodeSmiths\LunarFilamentRepeaterField\CustomAttributeData;
+
 $this->app->scoped('lunar-attribute-data', function () {
     return new CustomAttributeData;
 });
