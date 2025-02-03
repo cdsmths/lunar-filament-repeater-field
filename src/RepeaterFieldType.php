@@ -30,6 +30,9 @@ class RepeaterFieldType extends ListField
 
                 return $state;
             })
+            ->formatStateUsing(function (Repeater $component, RepeaterField $state) {
+                return $state->getValue();
+            })
             ->columns(2)
             ->schema([
                 TextInput::make('first_name')
