@@ -5,10 +5,10 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/cdsmths/lunar-filament-repeater-field/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/cdsmths/lunar-filament-repeater-field/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/cdsmths/lunar-filament-repeater-field.svg?style=flat-square)](https://packagist.org/packages/cdsmths/lunar-filament-repeater-field)
 
-This is a Laravel package that provides a repeater field for the Filament admin panel. This a field that allows you to add multiple instances of a group of fields. This is useful for creating a list of items that have the same fields.
+This is a prototype for using a repeater field for the Filament admin panel.
 
 > [!WARNING]
-> This package is still in development and is not yet ready for production use.
+> This package is a PROTOTYPE and should not be used in production.
 
 ## Installation
 
@@ -20,10 +20,15 @@ composer require cdsmths/lunar-filament-repeater-field
 
 ## Usage
 
-Register the field in your AppServiceProvider like so in the register method:
+Register the field in your AppServiceProvider and for now override the AttributeData class to support the new repeater field.
 
 ```php
+$this->app->scoped('lunar-attribute-data', function () {
+    return new CustomAttributeData;
+});
+
 AttributeData::registerFieldType(RepeaterField::class, RepeaterFieldType::class);
+
 ```
 
 Then you can add the field under Settings > Attribute Groups > Fields in your Lunar admin panel. Don't forget to add the the field to your producttype otherwise it won't show up on the product edit page.

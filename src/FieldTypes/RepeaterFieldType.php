@@ -1,6 +1,6 @@
 <?php
 
-namespace CodeSmiths\LunarFilamentRepeaterField;
+namespace CodeSmiths\LunarFilamentRepeaterField\FieldTypes;
 
 use CodeSmiths\LunarFilamentRepeaterField\Fields\RepeaterField;
 use CodeSmiths\LunarFilamentRepeaterField\Synthesizers\RepeaterFieldSynth;
@@ -29,9 +29,6 @@ class RepeaterFieldType extends ListField
                 $component->state($state);
 
                 return $state;
-            })
-            ->formatStateUsing(function (Repeater $component, RepeaterField $state) {
-                return $state->getValue();
             })
             ->columns(2)
             ->schema([
