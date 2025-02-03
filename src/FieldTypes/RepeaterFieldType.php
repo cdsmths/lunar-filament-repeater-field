@@ -2,7 +2,6 @@
 
 namespace CodeSmiths\LunarFilamentRepeaterField\FieldTypes;
 
-use CodeSmiths\LunarFilamentRepeaterField\Fields\RepeaterField;
 use CodeSmiths\LunarFilamentRepeaterField\Synthesizers\RepeaterFieldSynth;
 use Filament\Forms\Components\Component;
 use Filament\Forms\Components\Repeater;
@@ -23,13 +22,6 @@ class RepeaterFieldType extends ListField
     public static function getFilamentComponent(Attribute $attribute): Component
     {
         return Repeater::make($attribute->handle)
-            ->dehydrateStateUsing(function (Repeater $component, mixed $state) {
-                $state = new RepeaterField(array_values($state));
-
-                $component->state($state);
-
-                return $state;
-            })
             ->columns(2)
             ->schema([
                 TextInput::make('first_name')
