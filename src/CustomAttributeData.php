@@ -23,19 +23,6 @@ class CustomAttributeData extends \Lunar\Admin\Support\Forms\AttributeData
 
                 return $state->getValue();
             })
-            ->dehydrateStateUsing(function ($state) use ($attribute) {
-                if (
-                    ! $state instanceof FieldTypeContract ||
-                    (get_class($state) !== $attribute->type)
-                ) {
-                    $field = (new $attribute->type);
-                    $field->setValue($state);
-
-                    return $field;
-                }
-
-                return $state;
-            })
             ->mutateDehydratedStateUsing(function ($state) use ($attribute) {
                 if (
                     ! $state instanceof FieldTypeContract ||
